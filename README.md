@@ -1,6 +1,6 @@
-# API de Cursos — FastAPI + MongoDB
+# CursoMaker
 
-Guia passo a passo para rodar o projeto localmente.
+Guia para configurar e executar localmente uma API de CRUD de cursos, desenvolvida com FastAPI e MongoDB
 
 > **Stack**: FastAPI, Uvicorn, MongoDB (Motor), Pydantic, python-dotenv
 
@@ -66,11 +66,10 @@ Certifique-se de que o serviço do MongoDB está rodando. Alguns comandos comuns
 ## 4) Clonar o projeto
 
 ```bash
-git clone <URL-do-seu-repo>
-cd <pasta-do-repo>
+git clone https://github.com/Gustavoksbr/CursoMaker.git
+cd CursoMaker
 ```
 
-> Substitua `<URL-do-seu-repo>` pelo endereço do seu GitHub.
 
 ---
 
@@ -215,50 +214,11 @@ curl -X DELETE http://127.0.0.1:8000/cursos/fastapi102
 
 ---
 
-## 11) Boas práticas
 
-* **Não** versione credenciais: mantenha-as em `.env` (listado no `.gitignore`).
-* Gere/atualize o `requirements.txt` sempre que adicionar libs: `pip freeze > requirements.txt`.
-* Rodar a API a partir da **raiz** do projeto para evitar problemas de import.
-* Configure um **índice único** opcional no Mongo para o campo `codigo`:
-
-  ```javascript
-  db.cursos.createIndex({ codigo: 1 }, { unique: true })
-  ```
-
----
-
-## 12) Erros comuns & soluções
-
-* **Erro de conexão com o MongoDB**: verifique se o serviço está ativo e se `MONGO_URI` está correto.
-* **`ModuleNotFoundError` / `uvicorn: command not found`**: confirme que o venv está ativo e as dependências instaladas.
-* **CORS (em frontend)**: adicione o middleware de CORS no `app/main.py` se for consumir a API de um navegador.
-
----
-
-## 13) .gitignore sugerido (resumo)
-
-```gitignore
-__pycache__/
-*.py[cod]
-venv/
-env/
-.venv/
-ambiente-virtual/
-.vscode/
-.idea/
-*.log
-.DS_Store
-Thumbs.db
-.env
-*.secret
-```
-
----
-
-## 14) Próximos passos
+## 11) Próximos passos
 
 * Adicionar validação/normalização do `codigo` (ex.: slugify sem espaços)
 * Implementar autenticação/autorização
 * Testes automatizados (pytest) e pipeline CI
 * Docker/Compose para subir API e MongoDB juntos
+* Vincular a um front-end
