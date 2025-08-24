@@ -1,0 +1,38 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.db
+
+# Virtual environments
+venv/
+env/
+.venv/
+.ENV/
+env.bak/
+env.bkp/
+ambiente-virtual/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.tmp
+*.bak
+*.cache/
+
+# Configurações locais (não versionar)
+.env
+*.secret
